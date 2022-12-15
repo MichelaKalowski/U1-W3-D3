@@ -36,7 +36,7 @@
 
 <body>
   <div>
-    <h1>Questo è il titolo della pagina</h1>
+    <h1 onclick="MakeItClickable()">Questo è il titolo della pagina</h1>
     <h2>Questo è il sottotitolo della pagina</h2>
   </div>
 
@@ -113,7 +113,7 @@
     };
     changePcontent()
 
-    
+
 
 
     /* ESERCIZIO 4
@@ -124,7 +124,7 @@
       const changeU = document.querySelectorAll("div a")
       for (let i = 0; i < changeU.length; i++) {
         changeU[i].href = "https://www.google.com"
-        
+
       }
     };
     changeUrls()
@@ -166,27 +166,40 @@
     */
 
     const hideFirstUl = function () {
+      const firstList = document.getElementById("firstList")
+      firstList.remove();
 
 
     }
+    hideFirstUl()
 
     /* ESERCIZIO 8 
        Scrivi una funzione che renda verde il background di ogni lista non ordinata
       */
 
     const paintItGreen = function () {
+      const allList = document.querySelectorAll("ul")
+      console.log(allList);
+      allList.forEach((green) => {
+        green.style.backgroundColor = "green"
+      })
 
 
     }
+    paintItGreen();
 
     /* ESERCIZIO 9
        Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
       */
 
-    const makeItClickable = function () {
+      const makeItClickable = function () {  /*cancella tutto h1*/
+      const clickable = document.querySelector("h1")
+      console.log(clickable);
+      clickable.innerText = clickable.innerText.substring(0, clickable.innerText.lenght - 1)
 
 
     }
+    makeItClickable();
 
     /* ESERCIZIO 10
        Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
